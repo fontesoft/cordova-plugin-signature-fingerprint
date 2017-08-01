@@ -1,0 +1,19 @@
+{
+  "name": "cordova-plugin-signature-fingerprint",
+  "version": "1.0.0",
+  "description": "Cordova Signature Fingerprint Plugin",
+  "cordova": {
+    "id": "cordova-plugin-signature-fingerprint",
+    "platforms": [
+      "android"
+    ]
+  },
+  "keywords": [
+    "cordova",
+    "signature fingerprint",
+    "ecosystem:cordova",
+    "cordova-android"
+  ],
+  "author": "Samuel Fontebasso <sfdsilva@fontesoft.com>",
+  "license": "MIT"
+}
