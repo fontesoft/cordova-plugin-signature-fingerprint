@@ -45,4 +45,4 @@ SignatureFingerprint.getCoolMethod = function (data, success, fail) {
   return getPromisedCordovaExec('getCoolMethod', data, success, fail);
 }
 
-exports SignatureFingerprint;
+module.exports = SignatureFingerprint;

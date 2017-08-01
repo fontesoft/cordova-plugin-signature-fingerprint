@@ -14,6 +14,10 @@
     "ecosystem:cordova",
     "cordova-android"
   ],
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/fontesoft/cordova-plugin-signature-fingerprint"
+  },
   "author": "Samuel Fontebasso <sfdsilva@fontesoft.com>",
   "license": "MIT"
 }
