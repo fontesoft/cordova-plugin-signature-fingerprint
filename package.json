@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-signature-fingerprint",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "description": "Cordova Signature Fingerprint Plugin",
   "cordova": {
     "id": "cordova-plugin-signature-fingerprint",
