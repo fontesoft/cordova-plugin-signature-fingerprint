@@ -4,8 +4,8 @@
    <description>Cordova Signature Fingerprint Plugin</description>
    <license>MIT</license>
    <keywords>cordova,signature fingerprint</keywords>
-   <js-module name="device" src="www/signature.js">
-      <clobbers target="signature" />
+   <js-module name="SignatureFingerprint" src="www/signature.js">
+      <clobbers target="SignatureFingerprint" />
    </js-module>
    <platform name="android">
       <config-file parent="/*" target="res/xml/config.xml">
