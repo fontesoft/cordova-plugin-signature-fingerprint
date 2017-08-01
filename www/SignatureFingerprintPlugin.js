@@ -45,7 +45,7 @@ var getSignatureFingerprint = function (success, fail) {
   return getPromisedCordovaExec('getCoolMethod', success, fail);
 }
 
-SignatureFingerprint.getCoolMethod = function (success, fail) {
+getSignatureFingerprint.getCoolMethod = function (success, fail) {
   return getPromisedCordovaExec('getCoolMethod', data, success, fail);
 }
 
