@@ -1,3 +1,7 @@
+/*jslint indent: 2 */
+/*global window, jQuery, angular, cordova */
+"use strict";
+
 var getPromisedCordovaExec = function (command, data, success, fail) {
   var toReturn, deferred, injector, $q;
   if (success === undefined) {
@@ -37,12 +41,12 @@ var getPromisedCordovaExec = function (command, data, success, fail) {
   return toReturn;
 };
 
-var SignatureFingerprint = function (data, success, fail) {
+var getSignatureFingerprint = function (success, fail) {
+  return getPromisedCordovaExec('getCoolMethod', success, fail);
+}
+
+SignatureFingerprint.getCoolMethod = function (success, fail) {
   return getPromisedCordovaExec('getCoolMethod', data, success, fail);
 }
 
-SignatureFingerprint.getCoolMethod = function (data, success, fail) {
-  return getPromisedCordovaExec('getCoolMethod', data, success, fail);
-}
-
-module.exports = SignatureFingerprint;
+module.exports = getSignatureFingerprint;
