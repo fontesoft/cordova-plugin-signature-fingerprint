@@ -11,7 +11,7 @@ Especially useful for adding yet another layer of security in your API calls.
 If you are using [cordova-cli](https://github.com/apache/cordova-cli), install with:
 
 ```
-$ cordova plugin add cordova-plugin-app-version
+$ cordova plugin add cordova-plugin-signature-fingerprint
 ```
 
 ### With plugman
