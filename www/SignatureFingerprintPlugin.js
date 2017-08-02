@@ -46,7 +46,7 @@ var getSignatureFingerprint = function (success, fail) {
 }
 
 getSignatureFingerprint.getSignature = function (success, fail) {
-  return getPromisedCordovaExec('getSignature', data, success, fail);
+  return getPromisedCordovaExec('getSignature', success, fail);
 }
 
 module.exports = getSignatureFingerprint;
