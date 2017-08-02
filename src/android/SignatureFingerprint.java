@@ -30,6 +30,10 @@ public class SignatureFingerprint extends CordovaPlugin {
             this.coolMethod(message, callbackContext);
             return true;
         }
+        if (action.equals("getPackageName")) {
+          callbackContext.success(this.cordova.getActivity().getPackageName());
+          return true;
+        }
         if (action.equals("getSignature")) {
             String packageName = this.cordova.getActivity().getPackageName();
             PackageManager pm = this.cordova.getActivity().getPackageManager();

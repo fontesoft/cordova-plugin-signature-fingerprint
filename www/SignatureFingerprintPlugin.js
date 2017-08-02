@@ -37,7 +37,7 @@ var getPromisedCordovaExec = function (command, data, success, fail) {
     }
   }
   // 5th param is NOT optional. must be at least empty array
-  cordova.exec(success, fail, "SignatureFingerprint", command, data || []);
+  cordova.exec(success, fail, "SignatureFingerprint", command, []);
   return toReturn;
 };
 
@@ -45,7 +45,13 @@ var getSignatureFingerprint = function (success, fail) {
   return getPromisedCordovaExec('getSignature', success, fail);
 }
 
+getSignatureFingerprint.getPackageName = function (success, fail) {
+  console.log('vai pegar o nome');
+  return getPromisedCordovaExec('getPackageName', success, fail);
+}
+
 getSignatureFingerprint.getSignature = function (success, fail) {
+  console.log('vai pegar a assinatura');
   return getPromisedCordovaExec('getSignature', success, fail);
 }
 
