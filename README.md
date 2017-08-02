@@ -92,4 +92,4 @@ Returns the package name of the app
 
 ## License
 
-The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
+The Cordova Signature Fingerprint Plugin is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT).
