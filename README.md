@@ -1,4 +1,4 @@
-# Cordova SignatureFingerprint Plugin
+# Cordova Signature Fingerprint Plugin
 
 Get the fingerprint signature of your app's certificate and its package name.
 
@@ -22,6 +22,10 @@ able to install with something like:
 ```
 $ plugman --platform <ios|android> --project <directory> --plugin https://github.com/fontesoft/cordova-plugin-signature-fingerprint.git
 ```
+
+## Supported Platforms
+
+- Android
 
 ## Methods
 
