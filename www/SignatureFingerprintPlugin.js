@@ -46,12 +46,10 @@ var getSignatureFingerprint = function (success, fail) {
 }
 
 getSignatureFingerprint.getPackageName = function (success, fail) {
-  console.log('vai pegar o nome');
   return getPromisedCordovaExec('getPackageName', success, fail);
 }
 
 getSignatureFingerprint.getSignature = function (success, fail) {
-  console.log('vai pegar a assinatura');
   return getPromisedCordovaExec('getSignature', success, fail);
 }
 
