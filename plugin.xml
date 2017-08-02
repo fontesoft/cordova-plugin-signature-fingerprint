@@ -2,7 +2,7 @@
 <plugin xmlns="http://www.phonegap.com/ns/plugins/1.0"
   xmlns:android="http://schemas.android.com/apk/res/android"
   id="cordova-plugin-signature-fingerprint"
-  version="1.0.9">
+  version="1.0.10">
   <name>SignatureFingerprint</name>
   <description>Cordova Signature Fingerprint Plugin</description>
   <license>MIT</license>
@@ -11,7 +11,7 @@
     <engine name="cordova" version=">=3.0.0" />
   </engines>
   <js-module src="www/SignatureFingerprintPlugin.js">
-    <clobbers target="codova.getSignatureFingerprint" />
+    <clobbers target="cordova.getSignatureFingerprint" />
   </js-module>
   <platform name="android">
     <config-file target="res/xml/config.xml" parent="/*">
