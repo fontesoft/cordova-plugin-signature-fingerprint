@@ -11,6 +11,8 @@ import android.content.pm.PackageManager;
 import android.content.pm.PackageInfo;
 import android.content.pm.Signature;
 import java.io.InputStream;
+import java.io.ByteArrayInputStream;
+import java.lang.StringBuilder;
 import java.security.cert.CertificateFactory;
 import java.security.cert.CertificateException;
 import java.security.cert.CertificateEncodingException;
@@ -30,7 +32,7 @@ public class SignatureFingerprint extends CordovaPlugin {
             }
             if (action.equals("getSignature")) {
                 String packageName = this.cordova.getActivity().getPackageName();
-                PackageManager pm = getPackageManager();
+                PackageManager pm = this.cordova.getActivity().getPackageManager();
                 int flags = PackageManager.GET_SIGNATURES;
                 PackageInfo packageInfo = null;
                 try {
@@ -71,6 +73,19 @@ public class SignatureFingerprint extends CordovaPlugin {
             callbackContext.success("N/A");
             return true;
         }
+    }
+
+    public static String byte2HexFormatted(byte[] arr) {
+        StringBuilder str = new StringBuilder(arr.length * 2);
+        for (int i = 0; i < arr.length; i++) {
+            String h = Integer.toHexString(arr[i]);
+            int l = h.length();
+            if (l == 1) h = "0" + h;
+            if (l > 2) h = h.substring(l - 2, l);
+            str.append(h.toUpperCase());
+            if (i < (arr.length - 1)) str.append(':');
+        }
+        return str.toString();
     }
 
     private void coolMethod(String message, CallbackContext callbackContext) {
