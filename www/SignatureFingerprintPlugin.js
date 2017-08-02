@@ -42,11 +42,11 @@ var getPromisedCordovaExec = function (command, data, success, fail) {
 };
 
 var getSignatureFingerprint = function (success, fail) {
-  return getPromisedCordovaExec('getCoolMethod', success, fail);
+  return getPromisedCordovaExec('getSignature', success, fail);
 }
 
-getSignatureFingerprint.getCoolMethod = function (success, fail) {
-  return getPromisedCordovaExec('getCoolMethod', data, success, fail);
+getSignatureFingerprint.getSignature = function (success, fail) {
+  return getPromisedCordovaExec('getSignature', data, success, fail);
 }
 
 module.exports = getSignatureFingerprint;
