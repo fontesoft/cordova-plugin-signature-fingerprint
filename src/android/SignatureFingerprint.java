@@ -24,55 +24,51 @@ public class SignatureFingerprint extends CordovaPlugin {
 
     @Override
     public boolean execute(String action, JSONArray args, CallbackContext callbackContext) throws JSONException {
-        try {
-            if (action.equals("coolMethod")) {
-                String message = args.getString(0);
-                this.coolMethod(message, callbackContext);
-                return true;
-            }
-            if (action.equals("getSignature")) {
-                String packageName = this.cordova.getActivity().getPackageName();
-                PackageManager pm = this.cordova.getActivity().getPackageManager();
-                int flags = PackageManager.GET_SIGNATURES;
-                PackageInfo packageInfo = null;
-                try {
-                    packageInfo = pm.getPackageInfo(packageName, flags);
-                } catch (PackageManager.NameNotFoundException e) {
-                    e.printStackTrace();
-                }
-                Signature[] signatures = packageInfo.signatures;
-                byte[] cert = signatures[0].toByteArray();
-                InputStream input = new ByteArrayInputStream(cert);
-                CertificateFactory cf = null;
-                try {
-                    cf = CertificateFactory.getInstance("X509");
-                } catch (CertificateException e) {
-                    e.printStackTrace();
-                }
-                X509Certificate c = null;
-                try {
-                    c = (X509Certificate) cf.generateCertificate(input);
-                } catch (CertificateException e) {
-                    e.printStackTrace();
-                }
-                String hexString = null;
-                try {
-                    MessageDigest md = MessageDigest.getInstance("SHA1");
-                    byte[] publicKey = md.digest(c.getEncoded());
-                    hexString = byte2HexFormatted(publicKey);
-                } catch (NoSuchAlgorithmException e1) {
-                    e1.printStackTrace();
-                } catch (CertificateEncodingException e) {
-                    e.printStackTrace();
-                }
-                callbackContext.success(hexString);
-                return true;
-            }
-            return false;
-        } catch (NameNotFoundException e) {
-            callbackContext.success("N/A");
+
+        if (action.equals("coolMethod")) {
+            String message = args.getString(0);
+            this.coolMethod(message, callbackContext);
             return true;
         }
+        if (action.equals("getSignature")) {
+            String packageName = this.cordova.getActivity().getPackageName();
+            PackageManager pm = this.cordova.getActivity().getPackageManager();
+            int flags = PackageManager.GET_SIGNATURES;
+            PackageInfo packageInfo = null;
+            try {
+                packageInfo = pm.getPackageInfo(packageName, flags);
+            } catch (PackageManager.NameNotFoundException e) {
+                e.printStackTrace();
+            }
+            Signature[] signatures = packageInfo.signatures;
+            byte[] cert = signatures[0].toByteArray();
+            InputStream input = new ByteArrayInputStream(cert);
+            CertificateFactory cf = null;
+            try {
+                cf = CertificateFactory.getInstance("X509");
+            } catch (CertificateException e) {
+                e.printStackTrace();
+            }
+            X509Certificate c = null;
+            try {
+                c = (X509Certificate) cf.generateCertificate(input);
+            } catch (CertificateException e) {
+                e.printStackTrace();
+            }
+            String hexString = null;
+            try {
+                MessageDigest md = MessageDigest.getInstance("SHA1");
+                byte[] publicKey = md.digest(c.getEncoded());
+                hexString = byte2HexFormatted(publicKey);
+            } catch (NoSuchAlgorithmException e1) {
+                e1.printStackTrace();
+            } catch (CertificateEncodingException e) {
+                e.printStackTrace();
+            }
+            callbackContext.success(hexString);
+            return true;
+        }
+        return false;
     }
 
     public static String byte2HexFormatted(byte[] arr) {
