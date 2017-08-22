@@ -2,7 +2,7 @@
 /*global window, jQuery, angular, cordova */
 "use strict";
 
-var getPromisedCordovaExec = function (command, data, success, fail) {
+var getPromisedCordovaExec = function (command, success, fail) {
   var toReturn, deferred, injector, $q;
   if (success === undefined) {
     if (window.jQuery) {
