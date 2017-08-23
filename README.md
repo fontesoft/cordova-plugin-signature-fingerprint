@@ -20,8 +20,12 @@ With a plain [plugman](https://github.com/apache/cordova-plugman), you should be
 able to install with something like:
 
 ```
-$ plugman --platform <ios|android> --project <directory> --plugin https://github.com/fontesoft/cordova-plugin-signature-fingerprint.git
+$ plugman --platform <android> --project <directory> --plugin https://github.com/fontesoft/cordova-plugin-signature-fingerprint.git
 ```
+
+### With Ionic 2/3
+
+Use TypeScript wrapper Signature Fingerprint: https://www.npmjs.com/package/@fontesoft/signature-fingerprint
 
 ## Supported Platforms
 
