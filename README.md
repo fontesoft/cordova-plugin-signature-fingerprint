@@ -1,5 +1,7 @@
 # Cordova Signature Fingerprint Plugin
 
+[![Join the chat at https://gitter.im/cordova-plugin-signature-fingerprint/Lobby](https://badges.gitter.im/cordova-plugin-signature-fingerprint/Lobby.svg)](https://gitter.im/cordova-plugin-signature-fingerprint/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 Get the fingerprint signature of your app's certificate and its package name.
 
 Especially useful for adding yet another layer of security in your API calls.
