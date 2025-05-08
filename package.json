@@ -1,6 +1,6 @@
 {
   "name": "cordova-plugin-signature-fingerprint",
-  "version": "1.0.23",
+  "version": "1.0.24",
   "description": "Cordova Signature Fingerprint Plugin",
   "cordova": {
     "id": "cordova-plugin-signature-fingerprint",
@@ -18,6 +18,10 @@
     "type": "git",
     "url": "git+https://github.com/fontesoft/cordova-plugin-signature-fingerprint"
   },
-  "author": "Samuel Fontebasso <sfdsilva@fontesoft.com>",
+  "author": {
+    "name": "Samuel Fontebasso",
+    "email": "samuel.txd@gmail.com",
+    "url": "https://github.com/fontebasso"
+  },
   "license": "MIT"
 }
